@@ -15,7 +15,7 @@ export default class UniversitiesService {
         return this.universitiesRepository.deleteUniversity(id);
     }
 
-    public addUniversity(university: string): any {
+    public addUniversity(university: object): any {
         return this.universitiesRepository.addUniversity(university);
     }
 }

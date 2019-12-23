@@ -26,6 +26,7 @@ let UniversitiesRouter = class UniversitiesRouter {
         return this.universitiesOrchestrator.getAllUniversities();
     }
     addUniversity(university) {
+        console.log(typeof (university));
         return this.universitiesOrchestrator.addUniversity(university);
     }
     deleteUniversity(id) {

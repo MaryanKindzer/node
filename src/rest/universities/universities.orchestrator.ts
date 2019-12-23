@@ -15,7 +15,7 @@ export default class UniversitiesOrchestrator {
         return this.universitiesService.deleteUniversity(id);
     }
 
-    public addUniversity(university: string): any {
+    public addUniversity(university: object): any {
         return this.universitiesService.addUniversity(university);
     }
 }

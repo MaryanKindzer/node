@@ -17,7 +17,8 @@ export default class UniversitiesRouter {
     }
 
     @Post('/universities')
-    addUniversity(@Body() university: any) {
+    addUniversity(@Body() university: object) {
+        console.log(typeof (university));
         return this.universitiesOrchestrator.addUniversity(university);
     }
 

@@ -38,7 +38,16 @@ export default class UniversitiesRepository {
         return false;
     }
 
-    public addUniversity(university: String): any {
-        return {"Type": "Success"};
+    public addUniversity(university: object): any {
+        const universitiesString = fs.readFileSync(process.env.DB_USERS, {
+            encoding: 'utf8'
+        });
+        const {users, universities} = JSON.parse(universitiesString);
+        const id = universities[universities.length-1].id+1;
+        university.id = id;
+        universities.push(university);
+        const json = JSON.stringify({users, universities});
+        fs.writeFileSync(process.env.DB_USERS, json, 'utf8');
+        return true;
     }
 }
